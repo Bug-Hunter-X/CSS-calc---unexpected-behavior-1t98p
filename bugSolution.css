@@ -1,0 +1,15 @@
+/* Correct usage of calc() with consistent units and order of operations */
+#element {
+  width: calc((50% - 20px) + 100px); /* Enforce order using parentheses */
+  /* Or, for better readability and maintainability: */
+  width: calc(50% + 80px);
+}
+/* Alternatively, break down complex calculations into simpler ones, 
+   using variables or CSS custom properties. */
+:root {
+  --element-width-base: 50%;
+  --element-width-offset: 80px;
+}
+#element {
+  width: calc(var(--element-width-base) + var(--element-width-offset));
+} 
